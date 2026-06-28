@@ -1,0 +1,252 @@
+@font-face {
+  font-family: "UraBumBumSP";
+  src: url("./fonts/UraBumBumSP.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Убираем стандартные отступы браузера */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  font-family: "UraBumBumSP", sans-serif;
+  color: #8b0000;
+
+  /*
+    Повторяющийся фон из вертикальных полос.
+    35px — красная полоса.
+    Следующие 35px — светлая.
+  */
+  background: repeating-linear-gradient(
+    90deg,
+    #8b0000 0,
+    #8b0000 35px,
+    #fff6ed 35px,
+    #fff6ed 70px
+  );
+}
+
+/* Основной контейнер сайта */
+.page {
+  position: relative;
+
+  width: 253px;
+  margin: 0 auto;
+  padding-top: 102px;
+}
+
+.decor-heart {
+  position: absolute;
+  z-index: 5;
+
+  display: block;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+.decor-heart--1 {
+  width: 75px;
+  top: 225px;
+  left: 5px;
+}
+
+.decor-heart--2 {
+  width: 70px;
+  top: 380px;
+  right: 5px;
+}
+
+.decor-heart--3 {
+  width: 80px;
+  top: 450px;
+  left: 5px;
+}
+
+/* Общие свойства двух светлых карточек */
+.card {
+  position: relative;
+
+  background-color: #fff6ed;
+  border-radius: 36px;
+
+  text-align: center;
+}
+
+/* Верхний экран */
+.hero {
+  height: 646px;
+  padding: 62px 20px 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+}
+
+/* Надпись HAPPY 21 DAY */
+.hero__title {
+  font-size: 52px;
+  line-height: 1;
+}
+
+.hero__title p {
+  margin: 0 0 40px;
+}
+
+.hero__age {
+  font-size: 78px;
+  font-weight: bold;
+}
+
+/* Фотография */
+.hero__photo {
+  transform: translateY(-40px);
+  display: block;
+
+  width: calc(100% + 40px);
+  max-height: 260px;
+
+  margin-left: -20px;
+
+  object-fit: contain;
+}
+
+/* Нижняя часть приглашения */
+.invitation {
+  margin-top: 105px;
+  padding: 35px 25px 55px;
+}
+
+.invitation h2 {
+  margin: 30px 0 10px;
+  font-size: 21px;
+  font-weight: normal;
+}
+
+.invitation p {
+  margin: 8px 0;
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.calendar-image {
+  display: block;
+
+  width: 160px;
+  height: auto;
+
+  margin: 15px auto;
+
+  object-fit: contain;
+}
+
+.date {
+  font-size: 20px;
+}
+
+.address {
+  font-size: 17px !important;
+}
+
+.location-heart {
+  display: block;
+
+  width: 65px;
+  height: auto;
+
+  margin: 45px auto;
+
+  object-fit: contain;
+}
+
+/* Форма */
+.invite-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  text-align: left;
+}
+
+.invite-form h2 {
+  width: 100%;
+  font-size: 28px;
+  text-align: center;
+}
+
+.invite-form label {
+  margin: 8px 0;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.invite-form input {
+  margin-right: 8px;
+}
+
+/* Кнопка */
+button {
+  align-self: center;
+
+  margin-top: 25px;
+  padding: 12px 24px;
+
+  border: 0;
+  border-radius: 30px;
+
+  background-color: #9d0000;
+  color: #fff6ed;
+
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.04);
+}
+.answer-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin: 8px 0;
+
+  cursor: pointer;
+}
+
+.answer-input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+.answer-heart {
+  width: 30px;
+  height: 30px;
+
+  opacity: 0.45;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.answer-input:checked + .answer-heart {
+  opacity: 1;
+  transform: scale(1.2);
+}
