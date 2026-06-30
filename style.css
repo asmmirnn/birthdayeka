@@ -57,18 +57,27 @@ body {
   width: 75px;
   top: 225px;
   left: 5px;
+
+   --heart-rotate: -12deg;
+  animation-delay: 0s;
 }
 
 .decor-heart--2 {
   width: 70px;
   top: 380px;
   right: 5px;
+
+   --heart-rotate: -12deg;
+  animation-delay: 0s;
 }
 
 .decor-heart--3 {
   width: 80px;
   top: 450px;
   left: 5px;
+
+   --heart-rotate: -12deg;
+  animation-delay: 0s;
 }
 
 /* Общие свойства двух светлых карточек */
@@ -248,4 +257,50 @@ button:hover {
 .answer-input:checked + .answer-heart {
   opacity: 1;
   transform: scale(1.2);
+}
+.decor-heart {
+  transform-origin: center;
+  animation: heart-shake 2.5s ease-in-out infinite;
+}
+
+.decor-heart--1 {
+  --heart-rotate: -12deg;
+  animation-delay: 0s;
+}
+
+.decor-heart--2 {
+  --heart-rotate: 15deg;
+  animation-delay: 0.4s;
+}
+
+.decor-heart--3 {
+  --heart-rotate: 8deg;
+  animation-delay: 0.8s;
+}
+
+@keyframes heart-shake {
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      rotate(var(--heart-rotate, 0deg));
+  }
+
+  25% {
+    transform:
+      translate(-2px, 1px)
+      rotate(calc(var(--heart-rotate, 0deg) - 2deg));
+  }
+
+  50% {
+    transform:
+      translate(2px, -2px)
+      rotate(calc(var(--heart-rotate, 0deg) + 2deg));
+  }
+
+  75% {
+    transform:
+      translate(-1px, -1px)
+      rotate(calc(var(--heart-rotate, 0deg) - 1deg));
+  }
 }
