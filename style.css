@@ -17,22 +17,21 @@ html {
 
 body {
   margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
 
   font-family: "UraBumBumSP", sans-serif;
   color: #8b0000;
 
-  /*
-    Повторяющийся фон из вертикальных полос.
-    35px — красная полоса.
-    Следующие 35px — светлая.
-  */
-  background: repeating-linear-gradient(
-    90deg,
-    #8b0000 0,
-    #8b0000 35px,
-    #fff6ed 35px,
-    #fff6ed 70px
+  background-image: linear-gradient(
+    to right,
+    #8b0000 0 50%,
+    #fff6ed 50% 100%
   );
+
+  background-size: 18.1818% 100%;
+  background-repeat: repeat-x;
+  background-position: left top;
 }
 
 /* Основной контейнер сайта */
